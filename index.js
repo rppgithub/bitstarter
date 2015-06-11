@@ -9,7 +9,7 @@ app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
-        var buf = fs.readFileSync('index.html') ;
+        var buf = fs.readFileSync('index.html','utf-8') ;
         var bf = new Buffer(30);
   	response.send(bf.toString(buf));
 })
